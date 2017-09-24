@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prague Race Updates</title>
+	<script src="/res/js/jQuery.js"></script>
+	<script src="/res/js/index.js"></script>
+	<script>
+		function reloadHash() {
+			if(!window.location.hash) {
+				window.location = window.location + '#loaded';
+				window.location.reload();
+			}
+		}
+	</script>
+	<style>
+		body {
+				font-family: "Trebuchet MS", "Arial";
+				text-align: center;
+				margin: 0% auto;
+				overflow-x: hidden;
+			}
+
+			#background { /*Background image - the last update panel*/
+				right: 0%;
+				position: fixed;
+				opacity: 0.35;
+				z-index: -1;
+			}
+
+			#centered {
+				position: absolute;
+				margin: 0% auto;
+			}
+
+			/* Top navbar: */
+
+			#bar {
+				width: 100%;
+				top: 0%;
+				margin: 0%;
+				position: absolute;
+				background-color: black;
+				padding: 0.5%;
+			}
+
+			#bar a:link, #bar a:visited {
+				color: white;
+			}
+
+			#bar .padded {
+				padding-left: 5%;
+			}
+
+			#banner {
+				left: 1%;
+				color: white;
+				position: absolute;
+			}
+
+			/* Rotated highlighting */
+
+			.rot {
+				-ms-transform: skewX(-15deg);
+				-webkit-transform: skewX(-15deg);
+				transform: skewX(-15deg);
+
+				background-color: black;
+				color: white;
+				padding: 0.5%;
+				padding-right: 3%;
+				padding-left: 3%;
+				display: inline-block;
+			}
+
+			.backrot {
+				-ms-transform: skewX(15deg); /*Internet Explorer*/
+				-webkit-transform: skewX(15deg); /*Safari*/
+				transform: skewX(15deg); /*As it should be*/
+			}
+
+			::selection { /*most browsers*/
+				background-color: #4d905a;
+			}
+			::-moz-selection { /*mozilla*/
+				background-color: #4d905a;
+			}
+			/*other browsers*/
+			::-o-selection {
+				background-color: #4d905a;
+			}
+			::-ms-selection {
+				background-color: #4d905a;
+			}
+			::-webkit-selection { /*webkit*/
+				background-color: #4d905a;
+			}
+
+			/* Media queries */
+
+			@media(max-width: 970px) {
+				#bar #clear {
+					display: block;
+				}
+
+				#banner {
+					position: relative;
+					padding-right: 3%;
+				}
+			}
+
+			@media(max-width: 400px) {
+				#bar #clear2 {
+					display: block;
+				}
+
+				#bar .padded, #banner {
+					padding-left: 0;
+				}
+			}
+
+			@media (orientation: portrait) {
+				body {
+					overflow-x: show;
+					overflow-y: hidden;
+				}
+			}
+	</style>
+</head>
+<img id="background" alt="Could not display the last panel." onload="reloadHash()">
+<body>
+	<div id="bar">
+		<span id="banner"><b>Prague Race Update Notifier</b></span>
+		<span id="clear2">
+		<a href="/updates.html">Get email updates!</a>
+		<span id="clear">
+		<a href="/about.html" class="padded">What is this?</a>
+		<span id="clear2">
+		<a href="http://praguerace.com" class="padded">Prague Race's website</a>
+	</div>
+
+	<div id="centered">
+		<div class="rot">
+			<h1 class="backrot" id="title">Stand by...</h1>
+		</div>
+		<br><br><br><br>
+		<div class="rot">
+			<h1 class="backrot" id="time">Stand by...</h1> <!--forever alon(e) :') -->
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+    "name": "prun",
+    "version": "1.5.0",
+    "description": "Notifies user when Prague Race updates.",
+    "main": "main.js",
+    "engines": {
+        "node": "7.10.0"
+    },
+    "dependencies": {
+        "colors": "latest",
+        "mysql": "latest",
+        "mail-listener2": "latest",
+        "nodemailer": "latest",
+        "dotenv": "latest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chickenCabbage/PRUN-V5.git"
+    },
+    "author": "Alon Shiboleth",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/chickenCabbage/PRUN-V5/issues"
+    },
+    "homepage": "https://github.com/chickenCabbage/PRUN-V5"
+}

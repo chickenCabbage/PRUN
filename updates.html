@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About PRUN</title>
+	<style>
+		body {
+				font-family: "Trebuchet MS", "Arial";
+				text-align: center;
+				margin: 0% auto;
+				overflow-x: hidden;
+			}
+
+			#background { /*Background image - the last update panel*/
+				min-height: 100%;
+				min-width: 100%;
+				left: 0;
+				top: 0%;
+				position: fixed;
+				opacity: 0.1;
+				z-index: -1;
+			}
+
+			#centered {
+				margin: 0% auto;
+				padding-top: 7%;
+			}
+
+			#centered p {
+				padding-right: 12%;
+				padding-left: 12%;
+				text-align: left;
+			}
+
+			#bar {
+				width: 100%;
+				top: 0%;
+				margin: 0%;
+				position: absolute;
+				background-color: black;
+				padding: 0.5%;
+			}
+
+			#bar a:link, #bar a:visited {
+				color: white;
+			}
+
+			#bar .padded {
+				padding-left: 5%;
+			}
+
+			#centered a:link, #centered a:visited {
+				color: black;
+			}
+
+			#banner {
+				left: 1%;
+				color: white;
+				position: absolute;
+			}
+
+			.rot {
+				-ms-transform: skewX(-15deg);
+				-webkit-transform: skewX(-15deg);
+				transform: skewX(-15deg);
+
+				background-color: black;
+				color: white;
+				padding: 0.5%;
+				padding-right: 3%;
+				padding-left: 3%;
+				display: inline-block;
+			}
+
+			.backrot {
+				-ms-transform: skewX(15deg); /*Internet Explorer*/
+				-webkit-transform: skewX(15deg); /*Safari*/
+				transform: skewX(15deg); /*As it should be*/
+			}
+
+			::selection { /*most browsers*/
+				background-color: #4d905a;
+			}
+			::-moz-selection { /*mozilla*/
+				background-color: #4d905a;
+			}
+			/*other browsers*/
+			::-o-selection {
+				background-color: #4d905a;
+			}
+			::-ms-selection {
+				background-color: #4d905a;
+			}
+			::-webkit-selection { /*webkit*/
+				background-color: #4d905a;
+			}
+
+			.bottom {
+				font-size: 0.75em;
+				text-align: center;
+			}
+	</style>
+</head>
+<img id="background" src="/res/img/mails.jpg">
+<body>
+	<div id="bar">
+		<span id="banner"><b>Prague Race Update Notifier</b></span>
+		<a href="/about.html">What is this?</a>
+		<a href="/" class="padded">Update details</a>
+		<a href="http://praguerace.com" class="padded">Prague Race's website</a>
+	</div>
+
+	<div id="centered">
+		<div class="rot">
+			<h2 class="backrot">How do I subscribe to emails?</h2>
+		</div>
+		<p>You just have to send our address an email with the title of "subscribe". It's interpreted by a machine, so please don't add more details like "please" or "thanks" - it won't work if you do! <a href="mailto:mailer.prun@gmail.com?subject=Subscribe&body=Add%20anyting%20you'd%20like%20here,%20please.">In fact, you can do that right here and now!</a></p>
+		<br><br><br>
+		<div class="rot">
+			<h2 class="backrot">What are the emails like?</h2>
+		</div>
+		<p>The emails contain the standard explanation - Prague Race has updated, you are given a link to the Prague Race website and an unsubscribe mailto link. They contain hidden spoilers, too. The update name and time (visible only when highlighted), and the last panel as an image (visible only when dragged). You can't and won't see them accidentally, but they're handy to keep in touch with the latest plotlines even if you're short on time.</p>
+		<br><br><br>
+		<div class="rot">
+			<h2 class="backrot">How do I unsubscribe?</h2>
+		</div>
+		<p>It's as simple as subscribing! You have to send an email titled "unsubscribe" to the same address. I, the creator of this, would really appreciate it if you gave additional input on what you think of PRUN and why you unsubscribed.
+		<br>
+		<a href="mailto:mailer.prun@gmail.com?subject=Unsubscribe&body=Why%20did%20you%20unsubscribe?%0D%0DPlease%20do%20not%20change%20the%20title%20of%20this%20email,%20or%20the%20P.R.U.N%20system%20will%20not%20be%20able%20to%20understand%20it.">Unsubscribe here.</a>
+		</p>
+		<br><br><br>
+		<p class="bottom">Thanks for checking this page out!<br>The PRUN address is <i>mailer.prun@gmail.com</i>, our personal addresses are <i>alon.shiboleth@gmail.com</i> and <i>idanwork.169@gmail.com</i>.
+		<br>
+		Also, it's completely free and you can view the whole source code on <a href="https://github.com/chickenCabbage/PRUN-V5">GitHub</a>.</p>
+	</div>
+</body>
+</html>
