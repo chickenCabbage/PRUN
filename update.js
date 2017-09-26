@@ -59,7 +59,7 @@ function sendMail(recip, title, time) {
 	};
 
 	var transporter = nodemailer.createTransport({
-		service: MAILER_SERVICE,
+		service: process.env.MAILER_SERVICE,
 		auth: {
 			"user": process.env.EMAIL_USERNAME,
 			"pass": process.env.EMAIL_PASSWORD

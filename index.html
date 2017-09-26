@@ -4,16 +4,8 @@
 	<title>Prague Race Updates</title>
 	<script src="/res/js/jQuery.js"></script>
 	<script src="/res/js/index.js"></script>
-	<script>
-		function reloadHash() {
-			if(!window.location.hash) {
-				window.location = window.location + '#loaded';
-				window.location.reload();
-			}
-		}
-	</script>
 	<style>
-		body {
+			body {
 				font-family: "Trebuchet MS", "Arial";
 				text-align: center;
 				margin: 0% auto;
@@ -124,6 +116,10 @@
 					overflow-y: hidden;
 				}
 			}
+
+			.bottom {
+				text-align: center;
+			}
 	</style>
 </head>
 <img id="background" alt="Could not display the last panel." onload="reloadHash()">
@@ -146,6 +142,16 @@
 		<div class="rot">
 			<h1 class="backrot" id="time">Stand by...</h1> <!--forever alon(e) :') -->
 		</div>
+		<br><br><br><br>
+		<p id="status">Awaiting sync...</p>
 	</div>
 </body>
+<script>
+	function reloadHash() {
+		if(!window.location.toString().includes("#")) {
+			window.location = window.location + '#loaded';
+			window.location.reload();
+		}
+	}
+</script>
 </html>

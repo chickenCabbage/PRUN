@@ -1,12 +1,14 @@
 var updateText;
 var lastCheckTime = 0;
+var statusMsg = "Awaiting sync...";
 
 window.onLoad = jQuery.get("/update.txt", function(data, status) { //init
 	updateText = data;
 	assignSplit();
-	resize();
+	resizeContent();
 
 	setInterval(function() {
+		document.getElementById("status").innerHTML = "Counting down until sync.";
 		if (lastCheckTime == 60){ //reset the check loop
 			updateInfo(); //refresh
 			lastCheckTime = 0;
@@ -17,8 +19,11 @@ window.onLoad = jQuery.get("/update.txt", function(data, status) { //init
 
 function updateInfo() {
 	jQuery.get("./update.txt", function(data, status) {
-		if(data == updateText) {} //no update
+		if(data == updateText) {
+			document.getElementById("status").innerHTML = "No update found.";
+		} //no update
 		else { //yes update
+			statusMsg = "Update!";
 			assignSplit();
 			notify(updateText.split("\n")[2]);
 		}
@@ -29,6 +34,7 @@ function updateInfo() {
 function assignSplit() {
 	document.getElementById("time").innerHTML = "Update time: " + updateText.split("\n")[0];
 	document.getElementById("title").innerHTML = "Update title : " + updateText.split("\n")[1];
+	document.getElementById("status").innerHTML = statusMsg;
 	document.getElementById("background").src = updateText.split("\n")[2];
 }
 
@@ -59,7 +65,7 @@ function notify(image) {
 	}
 }
 
-function resize() {
+function resizeContent() {
 	var img = document.getElementById("background");
 	var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -69,6 +75,7 @@ function resize() {
 		img.clientHeight = img.clientHeight;
 
 		var rem = Math.round(Math.random() * (img.clientHeight - windowHeight));
+		//calculate the difference between the image and the window, and move it randomly between it
 		img.style.bottom = -rem + "px";
 	}
 	else { //image is wider
