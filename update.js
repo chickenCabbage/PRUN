@@ -14,7 +14,7 @@ var fs = require("fs"); //for readng the files
 var title = fs.readFileSync("./update.txt").toString().split(eol)[1]; //stores the page's title
 var configPath = "./res/cfg/";
 
-require("dotenv").config({path: configPath + "vars.env"});
+require("dotenv").config({path: "../vars.env"});
 
 var colors = require("colors"); //for fancy console
 function errPrint(text) {

@@ -22,7 +22,7 @@ function wrnPrint(text) {
 var configPath = "./res/cfg/";
 var fs = require("fs"); //file reader
 
-require("dotenv").config({path: configPath + "vars.env"});
+require("dotenv").config({path: "../vars.env"});
 
 var mysql = require("mysql"); //MySQL API
 var con = mysql.createConnection({
@@ -106,7 +106,7 @@ mailListener.on("mail", function(mail, seqno, attributes) {
 					});
 				} //end if(!fromResolve[0])
 				else { //if there was a result in the email lookup
-					wrnPrint(from[0] + " already exists!");
+					console.log(from[0] + " is already added!");
 				}
 			}).catch(function(fromReject) { //catch for SELECT
 				errPrint("Could not add user because could not query for user! " + from[0] + "\n" +  fromReject);
@@ -154,6 +154,9 @@ http.createServer(function(request, response) { //on every request to the server
 			case "jpg":
 			case "jpeg":
 				response.writeHead(200, {"Content-Type": "image/jpg"});
+			break;
+			case "gif":
+				response.writeHead(200, {"Content-Type": "image/gif"});
 			break;
 			case "ico":
 				response.writeHead(200, {"Content-Type": "image/x-icon"});
