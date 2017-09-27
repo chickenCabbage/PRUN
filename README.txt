@@ -6,7 +6,7 @@ Prague Race by the awesome Petra Nordlund (Leppu)
 http://praguerace.com/ website by Hiveworks
 PRUN version 5, README written on 27/09/2017
 
-This is a website and service for notifiying readers of the comic Prague Race when the comic updates and a new page comes out.
+This is a website and service for notifying readers of the comic Prague Race when the comic updates and a new page comes out.
 
 Feeds are often a few minutes late - they can get to fifteen minutes of delay. They may require copy-pasting URLs or code, and it's ugly and error-prone. They're uncomfortable and constricting, making you feel in a hurry to see everything and never miss a single thing. They offer very limited info; other than the title, date, and "today's news" that Leppu seems to have dropped, you know nothing about the update.
 
