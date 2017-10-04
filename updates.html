@@ -2,6 +2,16 @@
 <html>
 <head>
 	<title>About PRUN</title>
+	<script>
+		function placeElements() {
+			var cent = document.getElementById("centered");
+			var bar = document.getElementById("bar");
+			var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+			var divHeight = cent.clientHeight;
+			var barHeight = bar.clientHeight;
+			cent.style.paddingTop = ((windowHeight / 8) + barHeight) + "px";
+		}
+	</script>
 	<style>
 		body {
 				font-family: "Trebuchet MS", "Arial";
@@ -94,6 +104,34 @@
 				background-color: #4d905a;
 			}
 
+			@media(max-width: 970px) {
+				#bar #clear {
+					display: block;
+				}
+
+				#banner {
+					position: relative;
+					padding-right: 3%;
+				}
+			}
+
+			@media(max-width: 400px) {
+				#bar #clear2 {
+					display: block;
+				}
+
+				#bar .padded, #banner {
+					padding-left: 0;
+				}
+			}
+
+			@media (orientation: portrait) {
+				body {
+					overflow-x: show;
+					overflow-y: hidden;
+				}
+			}
+
 			.bottom {
 				font-size: 0.75em;
 				text-align: center;
@@ -101,11 +139,14 @@
 	</style>
 </head>
 <img id="background" src="/res/img/mails.jpg">
-<body>
+<body onresize="placeElements()">
 	<div id="bar">
 		<span id="banner"><b>Prague Race Update Notifier</b></span>
+		<span id="clear2">
 		<a href="/about.html">What is this?</a>
+		<span id="clear2">
 		<a href="/" class="padded">Update details</a>
+		<span id="clear">
 		<a href="http://praguerace.com" class="padded">Prague Race's website</a>
 	</div>
 

@@ -4,6 +4,14 @@
 	<title>Prague Race Updates</title>
 	<script src="/res/js/jQuery.js"></script>
 	<script src="/res/js/index.js"></script>
+	<script>
+		function reloadHash() {
+			if(!window.location.toString().includes("#")) {
+				window.location = window.location + '#loaded';
+				window.location.reload();
+			}
+		}
+	</script>
 	<style>
 			body {
 				font-family: "Trebuchet MS", "Arial";
@@ -11,21 +19,17 @@
 				margin: 0% auto;
 				overflow-x: hidden;
 			}
-
 			#background { /*Background image - the last update panel*/
 				right: 0%;
 				position: fixed;
 				opacity: 0.35;
 				z-index: -1;
 			}
-
 			#centered {
 				position: absolute;
 				margin: 0% auto;
 			}
-
 			/* Top navbar: */
-
 			#bar {
 				width: 100%;
 				top: 0%;
@@ -34,28 +38,22 @@
 				background-color: black;
 				padding: 0.5%;
 			}
-
 			#bar a:link, #bar a:visited {
 				color: white;
 			}
-
 			#bar .padded {
 				padding-left: 5%;
 			}
-
 			#banner {
 				left: 1%;
 				color: white;
 				position: absolute;
 			}
-
 			/* Rotated highlighting */
-
 			.rot {
 				-ms-transform: skewX(-15deg);
 				-webkit-transform: skewX(-15deg);
 				transform: skewX(-15deg);
-
 				background-color: black;
 				color: white;
 				padding: 0.5%;
@@ -63,13 +61,11 @@
 				padding-left: 3%;
 				display: inline-block;
 			}
-
 			.backrot {
 				-ms-transform: skewX(15deg); /*Internet Explorer*/
 				-webkit-transform: skewX(15deg); /*Safari*/
 				transform: skewX(15deg); /*As it should be*/
 			}
-
 			::selection { /*most browsers*/
 				background-color: #4d905a;
 			}
@@ -86,37 +82,30 @@
 			::-webkit-selection { /*webkit*/
 				background-color: #4d905a;
 			}
-
 			/* Media queries */
-
 			@media(max-width: 970px) {
 				#bar #clear {
 					display: block;
 				}
-
 				#banner {
 					position: relative;
 					padding-right: 3%;
 				}
 			}
-
 			@media(max-width: 400px) {
 				#bar #clear2 {
 					display: block;
 				}
-
 				#bar .padded, #banner {
 					padding-left: 0;
 				}
 			}
-
 			@media (orientation: portrait) {
 				body {
 					overflow-x: show;
 					overflow-y: hidden;
 				}
 			}
-
 			.bottom {
 				text-align: center;
 			}
@@ -146,12 +135,4 @@
 		<p id="status">Awaiting sync...</p>
 	</div>
 </body>
-<script>
-	function reloadHash() {
-		if(!window.location.toString().includes("#")) {
-			window.location = window.location + '#loaded';
-			window.location.reload();
-		}
-	}
-</script>
 </html>

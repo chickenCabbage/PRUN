@@ -3,6 +3,9 @@
     "version": "1.5.0",
     "description": "Notifies user when Prague Race updates.",
     "main": "main.js",
+    "scripts": {
+        "start": "nodejs main.js"
+    },
     "engines": {
         "node": "7.10.0"
     },

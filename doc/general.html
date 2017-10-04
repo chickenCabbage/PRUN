@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>About PRUN</title>
+	<title>PRUN Documentation</title>
 	<script>
 		function placeElements() {
 			var cent = document.getElementById("centered");
@@ -23,7 +23,7 @@
 			#background { /*Background image - the last update panel*/
 				min-height: 100%;
 				min-width: 100%;
-				right: 0%;
+				left: 0;
 				top: 0%;
 				position: fixed;
 				opacity: 0.1;
@@ -32,7 +32,6 @@
 
 			#centered {
 				margin: 0% auto;
-				padding-top: 7%;
 			}
 
 			#centered p {
@@ -52,10 +51,7 @@
 
 			#bar a:link, #bar a:visited {
 				color: white;
-			}
-
-			#bar .padded {
-				padding-left: 5%;
+				padding-left: 3.5%;
 			}
 
 			#centered a:link, #centered a:visited {
@@ -104,23 +100,26 @@
 				background-color: #4d905a;
 			}
 
-			@media(max-width: 970px) {
+			@media(max-width: 1100px) {
 				#bar #clear {
 					display: block;
 				}
 
+				#bar a {
+					padding-left: 2%;
+				}
+
 				#banner {
 					position: relative;
-					padding-right: 3%;
 				}
 			}
 
-			@media(max-width: 400px) {
+			@media(max-width: 600px) {
 				#bar #clear2 {
 					display: block;
 				}
 
-				#bar .padded, #banner {
+				#bar a, #banner {
 					padding-left: 0;
 				}
 			}
@@ -138,33 +137,49 @@
 			}
 	</style>
 </head>
-<img id="background" src="/res/img/about.jpg">
-<body onresize="placeElements()">
+<img id="background" src="/res/img/mails.jpg">
+<body>
 	<div id="bar">
 		<span id="banner"><b>Prague Race Update Notifier</b></span>
-		<span id="clear2">
-		<a href="/updates.html">Get email updates!</a>
 		<span id="clear">
-		<a href="/" class="padded">Update details</a>
+		<a href="/">Home page</a>
 		<span id="clear2">
-		<a href="http://praguerace.com" class="padded">Prague Race's website</a>
+		<a href="http://praguerace.com">Prague Race's website</a>
+		<span id="clear">
+		<a href="https://github.com/chickenCabbage/PRUN/issues">Issues, suggestions, complaints</a>
+		<span id="clear2">
+		<a href="https://github.com/chickenCabbage/PRUN">GitHub</a>
 	</div>
 
 	<div id="centered">
+		<br><br><br><br><br><br>
 		<div class="rot">
-			<h2 class="backrot">What does this do?</h2>
+			<h2 class="backrot">What is PRUN made of, essentially?</h2>
 		</div>
-		<p>The answer is in the name - PRUN - Prague Race Update Notifier. The PRUN system allows users to subscribe to email notifications for updates to the comic Prague Race, and displays the important details of the latest update: Its title, time and a peek at the new panel.</p>
+		<p>PRUN is made of two scripts, that essentially run without corellation to each other. One is <i>main.js</i>, and the other is <i>update.js</i>. Each script handles different parts of PRUN, and if one were to crash the other would still function normally.</p>
+		<p><a href="/doc/updatejs.html">update.js</a>
+		<br>
+		<a href="/doc/mainjs.html">main.js</a>
+		<br>
+		<a href="/README.txt">ReadMe text file</a>
+		</p>
 		<br><br><br>
 		<div class="rot">
-			<h2 class="backrot">Why not just use the Prague Race RSS?</h2>
+			<h2 class="backrot">Contact us:</h2>
 		</div>
-		<p>Feeds are often a few minutes late - they can get to fifteen minutes of delay. They may require copy-pasting URLs or code, and it's ugly and error-prone. They're uncomfortable and constricting, making you feel in a hurry to see everything and never miss a single thing. They offer very limited info; they lack the panel (the most important part!) and instead show "today's news" that Leppu seems to have dropped.</p>
-		<p>PRUN aims to fix all of that. It is designed in a way to reduce stress on the servers while maintaining quick update recognition: Under 120 seconds. PRUN doesn't require an external program to be downloaded like most readers do, or even a site visit. Instead, it offers emails - you can get notified on desktop, laptop, mobile, or even a smart watch. The PRUN website and emails contain all the information you'd want about the update.</p>
-		<br><br><br>
-		<p class="bottom">All artwork from Prague Race, by Petra Nordlund. Made by Alon Shiboleth and Idan Lerman.
-			<br>
-			Also, it's completely free and you can view the whole source code on <a href="https://github.com/chickenCabbage/PRUN-V5">GitHub</a>.</p>
+		<p>Contact any of us, any time!</p>
+		<p>PRUN-specific email:
+		<br>
+		mailer.prun@gmail.com
+		</p>
+		<p>Alon Shiboleth (chickenCabbage)
+		<br>
+		alon.shiboleth@gmail.com
+		</p>
+		<p>Idan Lerman (bakaNeko)
+		<br>
+		idanwork.169@gmail.com
+		</p>
 	</div>
 </body>
 </html>
