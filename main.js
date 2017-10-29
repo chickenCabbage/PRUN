@@ -95,10 +95,10 @@ mailListener.on("mail", function(mail, seqno, attributes) {
 	var subject = mail.headers.subject.toLowerCase().trim();
 	switch(subject) {
 		case "subscribe": //user wants to be added
-			var cmd = "SELECT * FROM v5 WHERE email = ?;"; //look for that user...
+			var cmd = "SELECT * FROM " + process.env.MySQL_TABLE + " WHERE emails = ?;"; //look for that user...
 			querySQL(cmd, from).then(function(fromResolve) {
 				if(!fromResolve[0]) { //and if there were no results...
-					cmd = "INSERT INTO v5 (email) VALUES (?);"; //...add them
+					cmd = "INSERT INTO " + process.env.MySQL_TABLE + " (emails) VALUES (?);"; //...add them
 					querySQL(cmd, from).then(function() {
 						console.log("Added " + from[0] + ", welcome!");
 					}).catch(function(fromReject) { //catch for INSERT
@@ -115,7 +115,7 @@ mailListener.on("mail", function(mail, seqno, attributes) {
 			mailListener.imap.addFlags(attributes.uid, "\\Seen");
 		break; //end case "subscribe"
 		case "unsubscribe":
-			var cmd = "DELETE FROM v5 WHERE email = ?;";
+			var cmd = "DELETE FROM " + process.env.MySQL_TABLE + " WHERE emails = ?;";
 			querySQL(cmd, from);
 			console.log("Removed " + from[0] + ". Check for feedback in unsubscribe emails.");
 			mailListener.imap.addFlags(attributes.uid, "\\Seen");

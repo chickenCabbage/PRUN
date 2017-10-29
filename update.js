@@ -14,7 +14,7 @@ var fs = require("fs"); //for readng the files
 var title = fs.readFileSync("./update.txt").toString().split(eol)[1]; //stores the page's title
 var configPath = "./res/cfg/";
 
-require("dotenv").config({path: "../vars.env"});
+require("dotenv").config({path: "../vars2.env"});
 
 var colors = require("colors"); //for fancy console
 function errPrint(text) {
@@ -86,7 +86,6 @@ client.on("fetch", function(){ //when client.fetch() is called
 		title = fs.readFileSync("./update.txt").toString().split(eol)[1]; //read the current data
 		if(client.title != title) { //if the title changed - new page!
 			title = client.title;
-
 			var time = client.parsedDocument(".cc-publishtime").html() //the div content
 			.split("<br>")[0].split("posted ")[1] + " EST"; //remove excess HTML/data
 			time = time.toString().replace("pm", "PM");
@@ -97,14 +96,17 @@ client.on("fetch", function(){ //when client.fetch() is called
 			wrnPrint("UPDATED! on " + time + ": " + client.title); //woo
 			console.log("Recoginzed on " + new Date().toString() + eol);
 
-			var cmd = "SELECT * FROM v5;";
+			var cmd = "SELECT * FROM " + process.env.MySQL_TABLE + ";";
 			querySQL(cmd).then(function(data) {
 				var allEmails = [];
 				for(i = 0; i < data.length; i ++) { //for every row in the table
 					if(testEmail(data[i].email)) allEmails[i] = data[i].email;
 				}
 				sendMail(allEmails.toString(), title, time);
+			}).catch(function(fromReject) { //catch for INSERT
+				errPrint("rejected:\n" + fromReject);
 			});
+
 		}//end if
 	}//end try
 	catch(err) {

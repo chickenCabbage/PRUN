@@ -4,6 +4,7 @@ var statusMsg = "Awaiting sync...";
 
 window.onLoad = jQuery.get("/update.txt", function(data, status) { //init
 	updateText = data;
+	updateInfo();
 	assignSplit();
 	resizeContent();
 
