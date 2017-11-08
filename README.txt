@@ -4,7 +4,7 @@ Prague Race Update Notifier - P.R.U.N
 Built and maintained by Alon Shiboleth (ChickenCabbage) and Idan Lerman (BakaNeko)
 Prague Race by the awesome Petra Nordlund (Leppu)
 http://praguerace.com/ website by Hiveworks
-PRUN version 5, README written on 27/09/2017
+PRUN version 5, README written on 8/11/2017
 
 This is a website and service for notifying readers of the comic Prague Race when the comic updates and a new page comes out.
 
@@ -14,6 +14,7 @@ PRUN aims to fix all of that. It is designed in a way to reduce stress on the se
 
 PRUN - Prauge Race updates, everywhere, anytime.
 
+To install PRUN locally for self-hosting with Node.js, make sure you have NPM installed and a file called "package.json", then run "npm update".
 For support contact mailer.prun@gmail.com or one of us:
 alon.shiboleth@gmail.com or idanwork.169@gmail.com.
 Download the source or contribute at https://github.com/chickenCabbage/PRUN/
