@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-<!--
-PLEASE TAKE NOTE
-~*~ ~*~ ~*~ ~*~
-This page is for self-hosting only. It has no use while the /res/err/ files are in use.
-When the Node.js server recognizes that some form of HTTP error occures it sends this file with #err's content ("ERRBODY")
-replaced with the actual error data.
-For instance, if you query an unexistant file the server will replace ERRBODY with "404 - File not found" or something like it.
- -->
-
 <head>
 	<title>Error!</title>
 	<style>
@@ -73,7 +63,7 @@ For instance, if you query an unexistant file the server will replace ERRBODY wi
 	<img id="gifBG" src="/res/img/gifbg.gif">
 
 	<div class="rot" id="errText">
-		<h1 class="backrot" id="err">ERRBODY</h1>
+		<h1 class="backrot" id="err">403 - File forbidden.</h1>
 	</div>
 
 	<script>

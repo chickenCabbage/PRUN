@@ -14,7 +14,7 @@ var fs = require("fs"); //for readng the files
 var title = fs.readFileSync("./update.txt").toString().split(eol)[1]; //stores the page's title
 var configPath = "./res/cfg/";
 
-require("dotenv").config({path: "../vars2.env"});
+require("dotenv").config({path: "../vars.env"});
 
 var colors = require("colors"); //for fancy console
 function errPrint(text) {
@@ -33,12 +33,17 @@ var con = mysql.createConnection({
 	password: process.env.MYSQL_PASSWORD,
 	database: process.env.MYSQL_DATABASE
 });
-con.connect(function(err) {
-	if(err) { //if an error was thrown
-		errPrint("Could not connect to MySQL!");
-		throw err;
-	}
-});
+try {
+	con.connect(function(err) {
+		if(err) { //if an error was thrown
+			errPrint("Could not connect to MySQL!");
+			throw err;
+		}
+	});
+}
+catch(err) {
+	errPrint("MySQL error on mysql.connect!\n" + err);
+}
 
 function querySQL(cmd) {
 	var dataPromise = new Promise(function(resolve, reject) {
@@ -100,7 +105,7 @@ client.on("fetch", function(){ //when client.fetch() is called
 			querySQL(cmd).then(function(data) {
 				var allEmails = [];
 				for(i = 0; i < data.length; i ++) { //for every row in the table
-					if(testEmail(data[i].email)) allEmails[i] = data[i].email;
+					if(testEmail(data[i].emails)) allEmails[i] = data[i].emails;
 				}
 				sendMail(allEmails.toString(), title, time);
 			}).catch(function(fromReject) { //catch for INSERT

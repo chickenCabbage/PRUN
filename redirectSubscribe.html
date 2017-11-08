@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>About PRUN</title>
+	<title>Redirecting, maybe</title>
 	<script>
 		function placeElements() {
 			var cent = document.getElementById("centered");
@@ -10,6 +10,10 @@
 			var divHeight = cent.clientHeight;
 			var barHeight = bar.clientHeight;
 			cent.style.paddingTop = ((windowHeight / 8) + barHeight) + "px";
+		}
+
+		function redirectMailto() {
+			window.open("mailto:mailer.prun@gmail.com?Subject=Subscribe&amp;Body=Add%20a%20message%2C%20if%20you%27d%20like.");
 		}
 	</script>
 	<style>
@@ -23,7 +27,7 @@
 			#background { /*Background image - the last update panel*/
 				min-height: 100%;
 				min-width: 100%;
-				left: 0;
+				right: 0%;
 				top: 0%;
 				position: fixed;
 				opacity: 0.1;
@@ -138,40 +142,32 @@
 			}
 	</style>
 </head>
-<img id="background" src="/res/img/mails.jpg">
-<body onresize="placeElements()">
+<img id="background" src="https://s-media-cache-ak0.pinimg.com/originals/7c/4c/df/7c4cdf99cc397259a0b49aeffdb252c3.jpg">
+<body onresize="placeElements()" onload="redirectMailto()">
 	<div id="bar">
 		<span id="banner"><b>Prague Race Update Notifier</b></span>
 		<span id="clear2">
-		<a href="/about.html">What is this?</a>
+		<a href="/" class="padded">Home page</a>
 		<span id="clear2">
-		<a href="/" class="padded">Update details</a>
-		<span id="clear">
 		<a href="http://praguerace.com" class="padded">Prague Race's website</a>
 	</div>
 
 	<div id="centered">
 		<div class="rot">
-			<h2 class="backrot">How do I subscribe to emails?</h2>
+			<h2 class="backrot">Hold on while you are redirected.</h2>
 		</div>
-		<p>You just have to send our address an email with the title of "subscribe". It's interpreted by a machine, so please don't add more details like "please" or "thanks" - it won't work if you do! <a href="mailto:mailer.prun@gmail.com?subject=Subscribe&body=Add%20anyting%20you'd%20like%20here,%20please.">In fact, you can do that right here and now!</a></p>
-		<br><br><br>
-		<div class="rot">
-			<h2 class="backrot">What are the emails like?</h2>
-		</div>
-		<p>The emails contain the standard explanation - Prague Race has updated, you are given a link to the Prague Race website and an unsubscribe mailto link. They contain hidden spoilers, too. The update name and time (visible only when highlighted), and the last panel as an image (visible only when dragged). You can't and won't see them accidentally, but they're handy to keep in touch with the latest plotlines even if you're short on time.</p>
-		<br><br><br>
-		<div class="rot">
-			<h2 class="backrot">How do I unsubscribe?</h2>
-		</div>
-		<p>It's as simple as subscribing! You have to send an email titled "unsubscribe" to the same address. I, the creator of this, would really appreciate it if you gave additional input on what you think of PRUN and why you unsubscribed.
-		<br>
-		<a href="mailto:mailer.prun@gmail.com?subject=Unsubscribe&body=Why%20did%20you%20unsubscribe?%0D%0DPlease%20do%20not%20change%20the%20title%20of%20this%20email,%20or%20the%20P.R.U.N%20system%20will%20not%20be%20able%20to%20understand%20it.">Unsubscribe here.</a>
+		<p>
+			If you aren't redirected, wait a few seconds (if you're using Outlook - we all know Outlook is a slow starter). If nothing happens, <b><a href="mailto:mailer.prun@gmail.com?Subject=Subscribe&amp;Body=Add%20a%20message%2C%20if%20you%27d%20like.">click me!</a></b> If still nothing happens, copy the following address and send an email manually. Make sure to title it "subscribe" or "unsubscribe" so the system can know what you mean.
+			<br>
+			<b>mailer.prun@gmail.com</b>
 		</p>
-		<br><br><br>
-		<p class="bottom">Thanks for checking this page out!<br>The PRUN address is <i>mailer.prun@gmail.com</i>, our personal addresses are <i>alon.shiboleth@gmail.com</i> and <i>idanwork.169@gmail.com</i>.
-		<br>
-		Also, it's completely free and you can view the whole source code on <a href="https://github.com/chickenCabbage/PRUN">GitHub</a>.</p>
+		<br><br>
+		<p>This is the domain and website of the to-be Prague Race Update Notifier website. Yes, I know it's broken, and yes, that's because it's not ready yet. It works perfectly when I host it myself. This isn't my fault but I'm fixing it anyway.</p>
+		<br><br><br><br><br>
+		<p class="bottom">All artwork from Prague Race, by Petra Nordlund. Made by Alon Shiboleth and Idan Lerman.
+			<br>
+			Also, it's completely free and you can view the whole source code on <a href="https://github.com/chickenCabbage/PRUN">GitHub</a>.
+		</p>
 	</div>
 </body>
 </html>

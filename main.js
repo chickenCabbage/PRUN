@@ -31,12 +31,17 @@ var con = mysql.createConnection({
 	password: process.env.MySQL_PASSWORD, //log in
 	database: process.env.MySQL_DATABASE //USE command
 });
-con.connect(function(err) {
-	if(err) { //if an error occured
-		errPrint("Could not connect to MySQL!");
-		throw err;
-	}
-});
+try {
+	con.connect(function(err) {
+		if(err) { //if an error occured
+			errPrint("Could not connect to MySQL!");
+			throw err;
+		}
+	});
+}
+catch(err) {
+	errPrint("MySQL error on mysql.connect!\n" + err);
+}
 
 function querySQL(cmd, data) {
 	var dataPromise = new Promise(function(resolve, reject) {

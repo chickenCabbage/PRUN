@@ -14,7 +14,8 @@
         "mysql": "latest",
         "mail-listener2": "latest",
         "nodemailer": "latest",
-        "dotenv": "latest"
+        "dotenv": "latest",
+        "node-metainspector": "latest"
     },
     "repository": {
         "type": "git",
