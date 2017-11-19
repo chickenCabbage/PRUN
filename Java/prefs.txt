@@ -1,0 +1,3 @@
+$sync: true
+$alert: true
+Do not change the content of this file unless you know what you are doing.
