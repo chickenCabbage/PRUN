@@ -1,2 +1,0 @@
-Please run the executable .exe file. The Java binary .jar file is optional and works, but doesn't have a spash screen or logo which are cool (therefore recommended to run the .exe using WINE even on non-Windows systems, but if anyone is willing to help test executables on other systems that'd be appreciated).
-Please don't change the files in the directory unless you really know what you're doing and if you found a bug or have a feature request please file it at https://github.com/chickenCabbage/PRUN/issues, thanks.
