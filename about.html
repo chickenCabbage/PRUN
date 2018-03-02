@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About PRUN</title>
+	<script>
+		function placeElements() {
+			var cent = document.getElementById("centered");
+			var bar = document.getElementById("bar");
+			var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+			var divHeight = cent.clientHeight;
+			var barHeight = bar.clientHeight;
+			cent.style.paddingTop = ((windowHeight / 8) + barHeight) + "px";
+		}
+	</script>
+	<style>
+		body {
+				font-family: "Trebuchet MS", "Arial";
+				text-align: center;
+				margin: 0% auto;
+				overflow-x: hidden;
+			}
+
+			#background { /*Background image - the last update panel*/
+				min-height: 100%;
+				min-width: 100%;
+				right: 0%;
+				top: 0%;
+				position: fixed;
+				opacity: 0.1;
+				z-index: -1;
+			}
+
+			#centered {
+				margin: 0% auto;
+				padding-top: 7%;
+			}
+
+			#centered p {
+				padding-right: 12%;
+				padding-left: 12%;
+				text-align: left;
+			}
+
+			#bar {
+				width: 100%;
+				top: 0%;
+				margin: 0%;
+				position: absolute;
+				background-color: black;
+				padding: 0.5%;
+			}
+
+			#bar a:link, #bar a:visited {
+				color: white;
+			}
+
+			#bar .padded {
+				padding-left: 5%;
+			}
+
+			#centered a:link, #centered a:visited {
+				color: black;
+			}
+
+			#banner {
+				left: 1%;
+				color: white;
+				position: absolute;
+			}
+
+			.rot {
+				-ms-transform: skewX(-15deg);
+				-webkit-transform: skewX(-15deg);
+				transform: skewX(-15deg);
+
+				background-color: black;
+				color: white;
+				padding: 0.5%;
+				padding-right: 3%;
+				padding-left: 3%;
+				display: inline-block;
+			}
+
+			.backrot {
+				-ms-transform: skewX(15deg); /*Internet Explorer*/
+				-webkit-transform: skewX(15deg); /*Safari*/
+				transform: skewX(15deg); /*As it should be*/
+			}
+
+			::selection { /*most browsers*/
+				background-color: #4d905a;
+			}
+			::-moz-selection { /*mozilla*/
+				background-color: #4d905a;
+			}
+			/*other browsers*/
+			::-o-selection {
+				background-color: #4d905a;
+			}
+			::-ms-selection {
+				background-color: #4d905a;
+			}
+			::-webkit-selection { /*webkit*/
+				background-color: #4d905a;
+			}
+
+			@media(max-width: 970px) {
+				#bar #clear {
+					display: block;
+				}
+
+				#banner {
+					position: relative;
+					padding-right: 3%;
+				}
+			}
+
+			@media(max-width: 400px) {
+				#bar #clear2 {
+					display: block;
+				}
+
+				#bar .padded, #banner {
+					padding-left: 0;
+				}
+			}
+
+			@media (orientation: portrait) {
+				body {
+					overflow-x: show;
+					overflow-y: hidden;
+				}
+			}
+
+			.bottom {
+				font-size: 0.75em;
+				text-align: center;
+			}
+	</style>
+</head>
+<img id="background" src="/res/img/about.jpg">
+<body onresize="placeElements()">
+	<div id="bar">
+		<span id="banner"><b>Prague Race Update Notifier</b></span>
+		<span id="clear2">
+		<a href="/updates.html">Get email updates!</a>
+		<span id="clear">
+		<a href="/" class="padded">Update details</a>
+		<span id="clear2">
+		<a href="http://praguerace.com" class="padded">Prague Race's website</a>
+	</div>
+
+	<div id="centered">
+		<div class="rot">
+			<h2 class="backrot">What does this do?</h2>
+		</div>
+		<p>The answer is in the name - PRUN - Prague Race Update Notifier. The PRUN system allows users to subscribe to email notifications for updates to the comic Prague Race, and displays the important details of the latest update: Its title, time and a peek at the new panel.</p>
+		<br><br><br>
+		<div class="rot">
+			<h2 class="backrot">Why not just use the Prague Race RSS?</h2>
+		</div>
+		<p>Feeds are often a few minutes late - they can get to fifteen minutes of delay. They may require copy-pasting URLs or code, and it's ugly and error-prone. They're uncomfortable and constricting, making you feel in a hurry to see everything and never miss a single thing. They offer very limited info; they lack the panel (the most important part!) and instead show "today's news" that Leppu seems to have dropped.</p>
+		<p>PRUN aims to fix all of that. It is designed in a way to reduce stress on the servers while maintaining quick update recognition: Under 120 seconds. PRUN doesn't require an external program to be downloaded like most readers do, or even a site visit. Instead, it offers emails - you can get notified on desktop, laptop, mobile, or even a smart watch. The PRUN website and emails contain all the information you'd want about the update.</p>
+		<br><br><br>
+		<p class="bottom">All artwork from Prague Race, by Petra Nordlund. Made by Alon Shiboleth and Idan Lerman.
+			<br>
+			Also, it's completely free and you can view the whole source code on <a href="https://github.com/chickenCabbage/PRUN">GitHub</a>.</p>
+	</div>
+</body>
+</html>
