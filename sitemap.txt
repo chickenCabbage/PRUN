@@ -1,0 +1,17 @@
+http://prace-notifier.rf.gd/
+http://prace-notifier.rf.gd/about.html
+http://prace-notifier.rf.gd/updates.html
+http://prace-notifier.rf.gd/doc/updatejs.html
+http://prace-notifier.rf.gd/doc/updateChart.png
+http://prace-notifier.rf.gd/doc/mainjs.html
+http://prace-notifier.rf.gd/doc/mailChart.png
+http://prace-notifier.rf.gd/doc/general.html
+http://prace-notifier.rf.gd/res/js/index.js
+http://prace-notifier.rf.gd/res/js/jQuery.js
+http://prace-notifier.rf.gd/res/img/bg.jpg
+http://prace-notifier.rf.gd/res/img/mails.jpg
+http://prace-notifier.rf.gd/res/img/gifbg.gif
+http://prace-notifier.rf.gd/robots.txt
+http://prace-notifier.rf.gd/README.txt
+http://prace-notifier.rf.gd/favicon.ico
+http://prace-notifier.rf.gd/res/img/icon.png
